@@ -12,7 +12,7 @@ class AlinaDB(object):
         self.location = os.path.expanduser(location+".json")
         self.load(self.location)
 
-    # Authentication user
+    # user Authentication 
     def auth(self, userpass):
         try:
             creed = json.load(open(self.location, "r"))
@@ -57,7 +57,7 @@ class AlinaDB(object):
         except:
             return False
 
-    # function for list database
+    # function to show/list all databases
     def show_db(self):
         dbs = os.listdir()
         print("  +-----------------------+")
@@ -73,7 +73,7 @@ class AlinaDB(object):
                 count += 1
         print(f"\n{count} rows in set")
 
-    # create subsets
+    # create collection
     def create_subset(self, key):
         try:
             if(self.get(key)):
@@ -84,7 +84,7 @@ class AlinaDB(object):
         except Exception as e:
             print("[X] Error Saving Values to Database : " + str(e))
 
-    # insert value on database
+    # insert value into database
     def insert(self , key , value):
         try:
             if(self.get(key)):
@@ -97,7 +97,7 @@ class AlinaDB(object):
             print("[X] Error Saving Values to Database : " + str(e))
             return False
 
-    # insert on subsets
+    # insert into collection
     def insert_on_subset(self, subset, key, value):
         if self.find_subset(subset):
             if key in self.db[subset]:
@@ -128,13 +128,13 @@ class AlinaDB(object):
         except Exception as e:
             print("[X] Error updating Values to Database : " + str(e))
 
-    # update value on subsets
+    # update value into collection
     def update_values_subset(self, subset, key, value):
         if self.find_subset(subset):
             self.db[subset][str(key)] = value
             self.dumpdb()
 
-    #show all subsets
+    # show all subsets
     def get_all_subset(self):
         db_data = json.load(open(self.location , "r"))
         count = 0
@@ -145,7 +145,7 @@ class AlinaDB(object):
                 count += 1
         print(f"{count} subsets found")
 
-    # get single value form given key
+    # get single value with given key
     def get_value_with_key(self, s_key, val_key):
         try:
             db_data = json.load(open(self.location , "r"))
@@ -155,7 +155,7 @@ class AlinaDB(object):
         except:
             return False
 
-    # function for find subsets
+    # function to find subsets
     def find_subset(self, key):
         db_data = json.load(open(self.location , "r"))
         for key_value in db_data:
@@ -180,7 +180,7 @@ class AlinaDB(object):
         except:
             return False
 
-    # get all from one subset
+    # get all datas from selected collection
     def show_all_from_subset(self, key):
         try:
             db_data = json.load(open(self.location , "r"))
@@ -213,7 +213,7 @@ class AlinaDB(object):
         self.dumpdb()
         return True
 
-     # delete data from subset
+     # delete data from collection
     def delete_from_subset(self, subset, key):
         if not subset in self.db:
             return False
