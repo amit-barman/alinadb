@@ -1,5 +1,6 @@
 # ======================
-# Alinadb 1.0 bita
+# Alinadb 1.0
+# By Amit Barman
 # ======================
 import Alinadb
 import getpass
