@@ -5,7 +5,7 @@
 AlinaDB is a simple and easy to use personal document database, written in python. If you want to store your data in a Furnished manner This is absolutely for you. Using alinadb you can esily store, add  and retrieve data with very simple commands. You can create new users and set privelages to each of them to get more security.
 
 <p float="left">
-	<img src="screenshot\Screenshot.png" height="250" width="410" />
+	<img src="/screenshots/Screenshot.png" height="250" width="410" />
 </p>
 
 ## 🖥 Features
