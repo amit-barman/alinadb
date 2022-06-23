@@ -24,7 +24,7 @@ git clone https://www.github.com/alinadb
 > ***or***  you can simply download the zip file and extract it.
 
 2) go to alinadb directory.
-3) type ***alina.py*** on terminal or comand prompt(if you are using windows system)
+3) type ***python alina.py*** on your terminal or comand prompt(if you are using windows system)
 > after run alinadb run ***help*** command to know all alinadb Commands.
 
 # Create by @Amit Barman
